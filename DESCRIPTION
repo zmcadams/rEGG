@@ -1,0 +1,10 @@
+Package: rEGG
+Title: Equine Gut Group Database
+Version: 0.0.0.9000
+Authors@R: 
+    person("McAdams", "Zach", , "zlmg2b@umsystem.edu", role = c("aut", "cre"))
+Description: This package provides a user-friendly method to download and interact with the Equine Gut Group (EGG) Database. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
