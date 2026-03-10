@@ -12,13 +12,13 @@ getEGG(version = "1.0.0", data_type = c("metadata", "table", "taxonomy"))
 \item{data_type}{Type of data to be downloaded (metadata, table, or taxonomic assignments)}
 }
 \value{
-A R object of the requested data dtype
+A R object of the requested data type from the EGG database
 }
 \description{
 getEGG
 }
 \examples{
 metadata = getEGG(version = "1.0.0", data_type = "metadata")
-metadata = getEGG(version = "1.0.0", data_type = "table")
-metadata = getEGG(version = "1.0.0", data_type = "taxonomy")
+
+taxonomy = getEGG(version = "1.0.0", data_type = "taxonomy")
 }

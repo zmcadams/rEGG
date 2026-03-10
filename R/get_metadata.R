@@ -9,42 +9,55 @@
 #' @examples
 #'metadata = getEGG(version = "1.0.0", data_type = "metadata")
 #'
-#'metadata = getEGG(version = "1.0.0", data_type = "table")
-#'
-#'metadata = getEGG(version = "1.0.0", data_type = "taxonomy")
+#'taxonomy = getEGG(version = "1.0.0", data_type = "taxonomy")
 
 getEGG = function(version = "1.0.0",
                   data_type = c('metadata', 'table', 'taxonomy')){
-  tryCatch({
-    zenodo_id = match.arg(
-      .pkg_env$database_versions[[version]]
-    )
-  }, error = function(e){
-    stop("Version number not found. Run get_EGG_version() for avaible versions.")
-  })
-  tryCatch({
-    data_type = match.arg(
-      .pkg_env$data_type[[data_type]]
-    )
-  }, error = function(e){
-    stop('Data type unavailable. Please select from c("metadata", "table", "taxonomy"')
-  })
 
+  ## Check if version is available.
+  ## If yes, then store Zenodo ID
+  if (!version %in% names(.pkg_env$database_versions)) {
+    stop("Version number not found. Run getEGG_version() for available versions.")
+  }
+
+  zenodo_id = .pkg_env$database_versions[[version]]
+
+  ## Check if a single data type was entered.
+  ## Check if data type is available.
+  ## If yes, then store.
+  if(length(data_type) != 1){
+    stop("Please enter a single data type value.")
+  }
+
+  if(!data_type %in% names(.pkg_env$data_type)){
+    stop('Data type unavailable. Please select from c("metadata", "table", "taxonomy"')
+  }
+
+  data_type = .pkg_env$data_type[[data_type]]
+
+  ## Generate download URL and download file.
   url = paste0("https://zenodo.org/records/",
                zenodo_id,
                "/files/",
                data_type,
                ".Rds")
 
-  if(!file.exists(url)){
-    stop(paste("File does not exist at:", url))
-  }
-
   tmp = "tmp/data.Rds"
-  download.file(url, tmp)
+
+  dir.create("./tmp", showWarnings = F)
+
+  download.file(url, tmp, )
+
   data = readRDS(tmp)
 
   file.remove(tmp)
+
+  file.remove("./tmp")
+
+  ## Report successful download and return data.
+  print(paste(data_type,
+               "successfully downloaded from EGG database version",
+               version))
 
   return(data)
 }
