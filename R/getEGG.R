@@ -3,7 +3,7 @@
 #' @param version Version of EGG database to be downloaded
 #' @param data_type Type of data to be downloaded (metadata, table, or taxonomic assignments)
 #'
-#' @returns A R object of the requested data type from the EGG database
+#' @returns A R object of the requested data type from the EGG database.
 #' @export
 #'
 #' @examples
