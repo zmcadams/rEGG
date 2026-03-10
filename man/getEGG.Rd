@@ -2,13 +2,23 @@
 % Please edit documentation in R/get_metadata.R
 \name{getEGG}
 \alias{getEGG}
-\title{Pull EGG Data Files}
+\title{getEGG}
 \usage{
 getEGG(version = "1.0.0", data_type = c("metadata", "table", "taxonomy"))
 }
 \arguments{
-\item{version}{Version of EGG database; default = 1.0.0}
+\item{version}{Version of EGG database to be downloaded}
+
+\item{data_type}{Type of data to be downloaded (metadata, table, or taxonomic assignments)}
+}
+\value{
+A R object of the requested data dtype
 }
 \description{
-Pull EGG Data Files
+getEGG
+}
+\examples{
+metadata = getEGG(version = "1.0.0", data_type = "metadata")
+metadata = getEGG(version = "1.0.0", data_type = "table")
+metadata = getEGG(version = "1.0.0", data_type = "taxonomy")
 }
