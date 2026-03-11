@@ -36,31 +36,11 @@ getEGG = function(version = "1.1.1",
 
   data_type = .pkg_env$data_type[[data_type]]
 
-  ## Generate download URL and download file.
-  url = paste0("https://zenodo.org/records/",
-               zenodo_id,
-               "/files/",
-               data_type,
-               "Rds")
-
-  tmp = "tmp/data.Rds"
-
-  dir.create("./tmp", showWarnings = F)
-
-  download.file(url, tmp, )
-
-  data = readRDS(tmp)
-
-  file.remove(tmp)
-
-  file.remove("./tmp")
-
-  ## Report successful download and return data.
-  print(paste(data_type,
-               "successfully downloaded from EGG database version",
-               version))
+  ## Read RDS file from Zenodo database
+  data = readRDS(zendown::zen_file(zenodo_id, data_type))
 
   return(data)
+
 }
 
 

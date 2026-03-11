@@ -25,7 +25,7 @@ remotes::install_github("zmcadams/rEGG")
 To download the EGG metadata, run the following code:
 
 ``` r
-getEGG(version = '1.1.1', data_type = 'metadata')
+metadata = getEGG(version = '1.1.1', data_type = 'metadata')
 ```
 
 ## Downloading EGG feature table
@@ -33,7 +33,15 @@ getEGG(version = '1.1.1', data_type = 'metadata')
 To download the EGG feature table, run the following code:
 
 ``` r
-getEGG(version = '1.1.1', data_type = 'table')
+table = getEGG(version = '1.1.1', data_type = 'table')
+```
+
+**NOTE: Before downloading table, it is recommended to increase the
+timeout limit for file downloads. Run the following code to increase to
+10 minutes:**
+
+``` r
+options(timeout = 600)
 ```
 
 ## Downloading EGG taxonomic assignments
@@ -41,7 +49,7 @@ getEGG(version = '1.1.1', data_type = 'table')
 To download the EGG taxonomic assignments, run the following code:
 
 ``` r
-getEGG(version = '1.1.1', data_type = 'taxonomy')
+taxonomy = getEGG(version = '1.1.1', data_type = 'taxonomy')
 ```
 
 ## Downloading EGG BioSample Accession numbers
@@ -49,5 +57,5 @@ getEGG(version = '1.1.1', data_type = 'taxonomy')
 To download the EGG BioSample Accession numbers, run the following code:
 
 ``` r
-getEGG(version = '1.1.1', data_type = 'biosample')
+biosampleIDs = getEGG(version = '1.1.1', data_type = 'biosample')
 ```

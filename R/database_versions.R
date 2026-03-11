@@ -11,8 +11,8 @@
 
 # List to store data types accessible via rEGG.
 .pkg_env$data_type = list(
-  'metadata' = 'metadata',
-  'table' = 'Dada2_table',
-  'taxonomy' = 'taxonomy',
-  'biosample' = 'biosampleID'
+  'metadata' = 'metadata.Rds',
+  'table' = 'dada2_table.Rds',
+  'taxonomy' = 'taxonomy.Rds',
+  'biosample' = 'biosampleID.Rds'
 )

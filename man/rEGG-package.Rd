@@ -6,6 +6,8 @@
 \alias{rEGG-package}
 \title{rEGG: Equine Gut Group Database}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 This package provides a user-friendly method to download and interact with the Equine Gut Group (EGG) Database.
 }
 \author{
