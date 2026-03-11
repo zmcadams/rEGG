@@ -7,12 +7,13 @@
 #' @export
 #'
 #' @examples
-#'metadata = getEGG(version = "1.0.0", data_type = "metadata")
+#'metadata = getEGG(version = "1.1.0", data_type = "metadata")
 #'
-#'taxonomy = getEGG(version = "1.0.0", data_type = "taxonomy")
+#'taxonomy = getEGG(version = "1.1.0", data_type = "taxonomy")
 
-getEGG = function(version = "1.0.0",
-                  data_type = c('metadata', 'table', 'taxonomy')){
+getEGG = function(version = "1.1.0",
+                  data_type = c('metadata', 'table',
+                                'taxonomy', 'biosample')){
 
   ## Check if version is available.
   ## If yes, then store Zenodo ID
@@ -30,7 +31,7 @@ getEGG = function(version = "1.0.0",
   }
 
   if(!data_type %in% names(.pkg_env$data_type)){
-    stop('Data type unavailable. Please select from c("metadata", "table", "taxonomy"')
+    stop('Data type unavailable. Please select from c("metadata", "table", "taxonomy", "biosample"')
   }
 
   data_type = .pkg_env$data_type[[data_type]]
@@ -39,8 +40,7 @@ getEGG = function(version = "1.0.0",
   url = paste0("https://zenodo.org/records/",
                zenodo_id,
                "/files/",
-               data_type,
-               ".Rds")
+               data_type)
 
   tmp = "tmp/data.Rds"
 

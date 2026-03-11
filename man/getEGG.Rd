@@ -4,7 +4,10 @@
 \alias{getEGG}
 \title{getEGG}
 \usage{
-getEGG(version = "1.0.0", data_type = c("metadata", "table", "taxonomy"))
+getEGG(
+  version = "1.1.0",
+  data_type = c("metadata", "table", "taxonomy", "biosample")
+)
 }
 \arguments{
 \item{version}{Version of EGG database to be downloaded}
@@ -18,7 +21,7 @@ A R object of the requested data type from the EGG database.
 getEGG
 }
 \examples{
-metadata = getEGG(version = "1.0.0", data_type = "metadata")
+metadata = getEGG(version = "1.1.0", data_type = "metadata")
 
-taxonomy = getEGG(version = "1.0.0", data_type = "taxonomy")
+taxonomy = getEGG(version = "1.1.0", data_type = "taxonomy")
 }
