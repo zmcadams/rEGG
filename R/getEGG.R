@@ -7,11 +7,11 @@
 #' @export
 #'
 #' @examples
-#'metadata = getEGG(version = "1.1.0", data_type = "metadata")
+#'metadata = getEGG(version = "1.1.1", data_type = "metadata")
 #'
-#'taxonomy = getEGG(version = "1.1.0", data_type = "taxonomy")
+#'taxonomy = getEGG(version = "1.1.1", data_type = "taxonomy")
 
-getEGG = function(version = "1.1.0",
+getEGG = function(version = "1.1.1",
                   data_type = c('metadata', 'table',
                                 'taxonomy', 'biosample')){
 
@@ -40,7 +40,8 @@ getEGG = function(version = "1.1.0",
   url = paste0("https://zenodo.org/records/",
                zenodo_id,
                "/files/",
-               data_type)
+               data_type,
+               "Rds")
 
   tmp = "tmp/data.Rds"
 

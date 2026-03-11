@@ -5,13 +5,14 @@
 # Zenodo IDs.
 .pkg_env$database_versions = list(
   '1.0.0' = 18909650, # original database
-  '1.1.0' = 18959770  # added BioSample IDs
+  '1.1.0' = 18959770, # added BioSample IDs
+  '1.1.1' = 18960181  # converted BioSample CSV to Rds
 )
 
 # List to store data types accessible via rEGG.
 .pkg_env$data_type = list(
-  'metadata' = 'metadata.Rds',
-  'table' = 'Dada2_table.Rds',
-  'taxonomy' = 'taxonomy.Rds',
-  'biosample' = 'BioSampleIDs.csv'
+  'metadata' = 'metadata',
+  'table' = 'Dada2_table',
+  'taxonomy' = 'taxonomy',
+  'biosample' = 'biosampleID'
 )

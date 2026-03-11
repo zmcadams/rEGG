@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rEGG
+# rEGG <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 <!-- badges: start -->
 
@@ -16,8 +16,8 @@ You can install the development version of rEGG from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("pak")
-pak::pak("zmcadams/rEGG")
+# install.packages("remotes")
+remotes::install_github("zmcadams/rEGG")
 ```
 
 ## Downloading EGG metadata
@@ -25,7 +25,7 @@ pak::pak("zmcadams/rEGG")
 To download the EGG metadata, run the following code:
 
 ``` r
-# getEGG(version = '1.0.0', data_type = 'metadata')
+getEGG(version = '1.1.1', data_type = 'metadata')
 ```
 
 ## Downloading EGG feature table
@@ -33,7 +33,7 @@ To download the EGG metadata, run the following code:
 To download the EGG feature table, run the following code:
 
 ``` r
-# getEGG(version = '1.0.0', data_type = 'table')
+getEGG(version = '1.1.1', data_type = 'table')
 ```
 
 ## Downloading EGG taxonomic assignments
@@ -41,5 +41,13 @@ To download the EGG feature table, run the following code:
 To download the EGG taxonomic assignments, run the following code:
 
 ``` r
-# getEGG(version = '1.0.0', data_type = 'taxonomy')
+getEGG(version = '1.1.1', data_type = 'taxonomy')
+```
+
+## Downloading EGG BioSample Accession numbers
+
+To download the EGG BioSample Accession numbers, run the following code:
+
+``` r
+getEGG(version = '1.1.1', data_type = 'biosample')
 ```
