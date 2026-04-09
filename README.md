@@ -20,6 +20,17 @@ You can install the development version of rEGG from
 remotes::install_github("zmcadams/rEGG")
 ```
 
+## EGG Metadata Categories
+
+Brief explanations of the EGG metadata categories can be found by
+running the command below. For more detailed explainations of the EGG
+dataset, please refer to the EGG manuscript in *Animal Microbiome*
+<https://doi.org/10.1186/s42523-025-00493-x>.
+
+``` r
+explainEGG()
+```
+
 ## Downloading EGG metadata
 
 To download the EGG metadata, run the following code:
@@ -58,4 +69,21 @@ To download the EGG BioSample Accession numbers, run the following code:
 
 ``` r
 biosampleIDs = getEGG(version = '1.1.1', data_type = 'biosample')
+```
+
+## Subsetting the EGG Dataset
+
+To subset the EGG dataset, filter the metadata to your desired samples
+then run the command below. The subsetEGG() function will create a
+directory containing CSV files for the filtered metadata, feature table,
+and taxonomic assignments.
+
+``` r
+subsetEGG(  
+  samples = filtered_metadata$sampleid, # Use list of sample ids
+  metadata = metadata_object            # EGG metadata object from getEGG()
+  table = table_object,                 # EGG table object from getEGG()
+  taxonomy = taxonomy_object,           # EGG taxonomy object from getEGG()
+  output_file = "output_directory"      # Name of output directory
+)
 ```

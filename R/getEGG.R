@@ -1,5 +1,7 @@
 #' getEGG
 #'
+#' @importFrom zendown zen_file
+#'
 #' @param version Version of EGG database to be downloaded
 #' @param data_type Type of data to be downloaded (metadata, table, or taxonomic assignments)
 #'
@@ -42,5 +44,6 @@ getEGG = function(version = "1.1.1",
   return(data)
 
 }
+
 
 
